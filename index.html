@@ -1,0 +1,78 @@
+<!doctype html>
+<html ng-app='shopular'>
+  <head>
+    <title>Shopular</title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body ng-controller='tableController as vm'>
+    <header>
+    <div class='top'>
+    <div class='orangeLogo'>
+    <div id='orange'></div>
+<div id='leaf2'></div>
+<div id='leafdeet'></div>
+</div>
+
+<div id='filter'></div>
+  <div id='ojstem'></div>
+    <div class='shopular'>SHmodular</div>
+    </div>
+   <main>
+
+  <form novalidate name='userDetails' ng-submit='vm.clickButton(userDetails.$valid)'>
+    Name: <input type='text' ng-model='vm.item.name' required>
+    Quantity: <input type='text' ng-model='vm.item.quantity' required>
+    Color: <input type='text' ng-model='vm.item.color' required>
+    Price: <input type='text' ng-model='vm.item.price' required>
+    <button>Go</button>
+  </form>
+
+  <p>Your Item: {{vm.name}} {{vm.quantity}} {{vm.color}} {{vm.price}}</p>
+</main>
+      <div class='container'>
+      <table class="table" ng-class="vm.table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Color</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr ng-repeat="item in vm.data track by $index">
+
+            <td>{{item.name}}</td>
+            <td>
+            <button ng-click="vm.changeQuantity(item,true)">+</button>
+            {{item.quantity}}
+            <button ng-click="vm.changeQuantity(item,false)">-</button>
+            </td>
+            <td>
+             <div class="color" style="background-color:{{item.color}}"></div>
+            {{item.color}}</td>
+            <td>{{(item.price - item.discount) * vm.tax | currency}} <span ng-if="item.discount > 0"><img src="https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png" alt="discount icon"></span></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </header>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src='js/main.js'></script>
+    <script src='js/controllers/tableController.js'></script>
+    <script src='js/services/api.js'></script>
+  </body>
+</html>
+
+

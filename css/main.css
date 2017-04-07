@@ -1,0 +1,79 @@
+.top {
+  height: 100px;
+  width: 100%;
+  background: linear-gradient(orange, #f38630);
+  margin-bottom: 100px;
+  border-bottom: 5px solid black; }
+
+#orange {
+  background: orange;
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  float: left;
+  border-radius: 50%;
+  bottom: 385px;
+  left: 500px;
+  border: 2px solid black; }
+
+#leaf2 {
+  background: green;
+  height: 50px;
+  width: 16px;
+  position: absolute;
+  float: left;
+  border-radius: 50%;
+  bottom: 412px;
+  left: 549px;
+  border: 1px solid black;
+  transform: rotate(-45deg);
+  z-index: 999; }
+
+#ojstem {
+  position: absolute;
+  float: left;
+  border-radius: 20%;
+  bottom: 450px;
+  left: 537px;
+  border: 1px solid black;
+  height: 15px;
+  width: 5px;
+  background: maroon;
+  transform: rotate(-5deg); }
+
+#filter {
+  height: 71px;
+  width: 71px;
+  position: absolute;
+  left: 502px;
+  bottom: 387px;
+  border-radius: 50%;
+  background-image: linear-gradient(45deg, #f38630 25%, transparent 25%, transparent 75%), linear-gradient(45deg, transparent 25%, transparent 75%, pink 75%);
+  background-size: 5px 5px;
+  background-position: 0 0, 50px 50px; }
+
+#leafdeet {
+  position: absolute;
+  float: left;
+  border-radius: 20%;
+  bottom: 413px;
+  left: 557px;
+  height: 48px;
+  width: 1px;
+  background: black;
+  transform: rotate(-43deg);
+  z-index: 99999; }
+
+.shopular {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 15px;
+  font-family: 'Playfair Display', serif; }
+
+.color {
+  height: 30px;
+  width: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); }
+
+input.ng-invalid {
+  background-color: red; }
